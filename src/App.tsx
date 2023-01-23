@@ -1,3 +1,5 @@
+import ApiData from './components/apiData.js';
+
 import {
   HeaderWrapper,
   CardContainer,
@@ -17,7 +19,7 @@ function App() {
     <>
       <HeaderWrapper>
         <CardContainer>
-          <h1>Hello from React</h1>
+          <ApiData/>
         </CardContainer>
       </HeaderWrapper>
       
