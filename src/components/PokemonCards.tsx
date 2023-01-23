@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
-import { useMemo } from 'react';
+import { PokemonStats } from '../interfaces';
 
 const StyledPokemonCards = styled.div`
   width: 98%;
@@ -25,27 +25,15 @@ const PokemonName = styled.div`
   margin-top: 8px;
 `
 
-interface PokemonDetails {
-  id: number;
-  name: string;
-  sprites: {
-    front_default: string;
-  };
-  abilities?: {
-    ability: string;
-    name: string;
-  }[];
-}
-
 interface PokemonCardsProps {
-  pokemonData: PokemonDetails[];
+  pokemonData: PokemonStats[];
 }
 
 const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
 
   return (
    <StyledPokemonCards>
-       { pokemonData && pokemonData.sort((a, b) => a.name.localeCompare(b.name)).map(pokemon => (
+        { pokemonData && pokemonData.map(pokemon => (
           <PokemonCard key={uuidv4()}>
             <img 
               src={pokemon.sprites.front_default}

@@ -4,16 +4,16 @@ import {
   StyledSelect,
   StyledSelectWrapper
 } from ".././AppStyles";
+import { PokemonStats } from '../interfaces';
 
-
-interface NamesProps {
-  pokemonNames: string[];
+interface SelectProps {
+  pokemonData: PokemonStats[];
   selectValue: string;
   setSelectValue: (value: string) => void;
   setActiveCircleSwitch: (value: boolean) => void;
 }
 
-export default function SelectPokemon({ pokemonNames, selectValue, setSelectValue, setActiveCircleSwitch }: NamesProps) {
+export default function SelectPokemon({ pokemonData, selectValue, setSelectValue, setActiveCircleSwitch }: SelectProps) {
 
   const handleChange = (e: any) => {
     setSelectValue(e.target.value);
@@ -26,8 +26,8 @@ export default function SelectPokemon({ pokemonNames, selectValue, setSelectValu
         Choose your Pokemon:
       </StyledSelectLabel>
       <StyledSelect value={selectValue} onChange={handleChange}>
-        {/* <option defaultValue=""></option> */}
-        {pokemonNames && pokemonNames.sort().map(name => <option key={uuidv4()} value={name}>{name}</option>)} 
+      { /* @ts-ignore */ }
+      {pokemonData && pokemonData.map(pokemon => <option key={uuidv4()} value={pokemon.name}>{pokemon.name}</option>)} 
       </StyledSelect>
     </StyledSelectWrapper> 
   )

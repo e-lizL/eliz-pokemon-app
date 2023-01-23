@@ -20,7 +20,6 @@ interface Pokemon {
 
 function App() {
   const [pokemonData, setPokemonData] = useState<Pokemon[]>([]);
-  const [pokemonNames, setPokemonNames] = useState<string[]>([]);
   const [selectValue, setSelectValue] = useState("");
   const [activeCircleSwitch, setActiveCircleSwitch] = useState(true);
 
@@ -28,17 +27,18 @@ function App() {
     const getPokemonData = async () => {
       const pokemonUrl = "https://pokeapi.co/api/v2/pokemon?limit=151";
       const res = await axios.get(pokemonUrl);
-
-      res.data.results.forEach(async (pokemon: Pokemon) => {
+      // @ts-ignore
+      alphabetData.forEach(async (pokemon: Pokemon) => {
         const poke = await axios.get(
           `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
         );
         setPokemonData((p) => [...p, poke.data]);
-        setPokemonNames((p) => [...p, pokemon.name]);
       });
     };
     getPokemonData();
   }, []);
+
+  pokemonData.map(pokemon => console.log(pokemon.name))
 
   return (
     <>
@@ -48,7 +48,7 @@ function App() {
         setActiveCircleSwitch={setActiveCircleSwitch}
       />
       <SelectPokemon 
-        pokemonNames={pokemonNames}
+        pokemonData={pokemonData}
         selectValue={selectValue}
         setSelectValue={setSelectValue}
         setActiveCircleSwitch={setActiveCircleSwitch}
