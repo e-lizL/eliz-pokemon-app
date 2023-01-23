@@ -1,5 +1,3 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import styled from 'styled-components';
 
 const StyledPokemonList = styled.div`
@@ -26,21 +24,8 @@ const PokemonName = styled.div`
   margin-top: 8px;
 `
 
-const PokemonList = () => {
-  const [pokemonData, setPokemonData] = useState([]);
-  const pokemonUrl = "https://pokeapi.co/api/v2/pokemon?limit=151";
-
-  useEffect(() => {
-    axios
-    .get(pokemonUrl)
-    .then((response) => {setPokemonData(response.data.results);
-    });
-   }, []);
-
-   //  console.log(pokemonData.results);
-
-   pokemonData.sort((a,b) => a.name.localeCompare(b.name));
-    
+const PokemonList = ({ pokemonData }) => {
+  
   return (
    <StyledPokemonList>
        { pokemonData.map(pokemon => (

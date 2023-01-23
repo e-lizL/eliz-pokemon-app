@@ -12,21 +12,21 @@ import {
 
 export default function Header() {
   return(
-  <>
-    <HeaderWrapper>
-       <CardContainer />
-    </HeaderWrapper>
-      
-    <Divider/>
+    <>
+      <HeaderWrapper>
+        <CardContainer />
+      </HeaderWrapper>
+        
+      <Divider/>
 
-    <CircleContainer>
-      <OuterCircle>
-        <InnerCircle>
-          <LeftSelect />
-          <RightSelect />
-        </InnerCircle>
-      </OuterCircle>
-    </CircleContainer>
-  </>
+      <CircleContainer>
+        <OuterCircle>
+          <InnerCircle>
+            <LeftSelect />
+            <RightSelect />
+          </InnerCircle>
+        </OuterCircle>
+      </CircleContainer>
+    </>
   )
 };
