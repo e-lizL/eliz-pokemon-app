@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import styled from 'styled-components';
 
-const PokemonList = styled.div`
+const StyledPokemonList = styled.div`
   /* border: 1px solid green;   */
   width: 98%;
   margin: 0 auto;
@@ -26,7 +26,7 @@ const PokemonName = styled.div`
   margin-top: 8px;
 `
 
-const ApiData = () => {
+const PokemonList = () => {
   const [pokemonData, setPokemonData] = useState([]);
   const pokemonUrl = "https://pokeapi.co/api/v2/pokemon?limit=151";
 
@@ -42,7 +42,7 @@ const ApiData = () => {
    pokemonData.sort((a,b) => a.name.localeCompare(b.name));
     
   return (
-   <PokemonList>
+   <StyledPokemonList>
        { pokemonData.map(pokemon => (
           <PokemonCard key={"name"}>
             <img 
@@ -53,8 +53,8 @@ const ApiData = () => {
             <PokemonName>{pokemon.name}</PokemonName> 
           </PokemonCard>
       ))} 
-    </PokemonList>   
+    </StyledPokemonList>   
   )
 };
 
-export default ApiData;
+export default PokemonList;
