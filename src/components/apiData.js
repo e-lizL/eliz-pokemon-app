@@ -15,11 +15,11 @@ const PokemonList = styled.div`
 `; 
 
 const PokemonCard = styled.div`
-border: 1px solid gray;
-text-align: center;
-font-family: Arial, Helvetica, sans-serif;
-background:  #e6e2e2;
-padding: 12px;
+  border: 1px solid gray;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background:  #e6e2e2;
+  padding: 12px;
 `;
 
 const PokemonName = styled.div`
@@ -45,7 +45,8 @@ const ApiData = () => {
    <PokemonList>
        { pokemonData.map(pokemon => (
           <PokemonCard key={"name"}>
-            <img src="https://via.placeholder.com/150"
+            <img 
+            src="https://via.placeholder.com/150"
             alt="placeholder"
             width="150"
             height="150" />
