@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 //AxiosRespose is a typing tool, for when you are testing data fetching & don't want typescript on your back 
 import { useState, useEffect } from "react";
-import PokemonList from './components/PokemonList';
+import PokemonCards from './components/PokemonCards';
 import Header from './components/Header';
 import SelectPokemon from './components/SelectPokemon';
 
@@ -46,7 +46,7 @@ function App() {
       setPokemonIndex={setPokemonIndex}  
       />
       <SelectPokemon/>
-      <PokemonList pokemonData={pokemonData}/>
+      <PokemonCards pokemonData={pokemonData}/>
     </>
   );
 };

@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components';
 
-const StyledPokemonList = styled.div`
+const StyledPokemonCards = styled.div`
   /* border: 1px solid green;   */
   width: 98%;
   margin: 0 auto;
@@ -25,10 +25,10 @@ const PokemonName = styled.div`
   margin-top: 8px;
 `
 
-const PokemonList = ({ pokemonData }) => {
+const PokemonCards = ({ pokemonData }) => {
   
   return (
-   <StyledPokemonList>
+   <StyledPokemonCards>
        { pokemonData.map(pokemon => (
           <PokemonCard key={uuidv4()}>
             <img 
@@ -40,8 +40,8 @@ const PokemonList = ({ pokemonData }) => {
             <PokemonName>{pokemon.name}</PokemonName> 
           </PokemonCard>
       ))} 
-    </StyledPokemonList>   
+    </StyledPokemonCards>   
   )
 };
 
-export default PokemonList;
+export default PokemonCards;

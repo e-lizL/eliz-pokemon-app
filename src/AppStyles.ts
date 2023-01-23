@@ -3,7 +3,7 @@ import { LeftArrow } from "@styled-icons/boxicons-solid/LeftArrow";
 import { RightArrow } from "@styled-icons/boxicons-solid/RightArrow";
 
 const HeaderWrapper = styled.div`
-  background: #ce2222;
+  background: var(--red); 
   padding: 80px 0 160px;
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const MainCard = styled.div`
-  height: 200px;
+  /* height: 200px; */
   margin-top: 50px;
   margin: 0 auto;
   background: white;
@@ -19,8 +19,30 @@ const MainCard = styled.div`
   border: 2px solid black;
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
+  padding: 40px;
 `;
+
+const StyledFeaturedImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  img{ 
+    height: 300px;
+    width: 300px;
+    }
+`;
+
+const StyledDetails = styled.div`
+  margin-top: 40px;
+`;
+
+const StyledDetailWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  div:first-child {
+    font-family: 'Black Han Sans', sans-serif;
+  }
+`
 
 const Divider = styled.div`
   height: 40px;
@@ -50,14 +72,22 @@ const InnerCircle = styled(OuterCircle)`
   justify-content: space-around;
 `;
 
-const LeftSelect = styled(LeftArrow)`
+const LeftTriangle = styled(LeftArrow)`
   color: black;
   height: 60px;
+  &:hover, &:active, &:focus {
+    color: var(--red); 
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 0px 0px 0px;
+  }
 `;
 
-const RightSelect = styled(RightArrow)`
+const RightTriangle = styled(RightArrow)`
   color: black;
   height: 60px;
+  &:hover, &:active, &:focus {
+    color: var(--red); 
+  }
 `;
 
 const StyledSelectLabel = styled.label`
@@ -89,9 +119,12 @@ export {
   CircleContainer,
   OuterCircle,
   InnerCircle,
-  LeftSelect,
-  RightSelect,
+  LeftTriangle,
+  RightTriangle,
   StyledSelectLabel,
   StyledSelect,
   StyledSelectWrapper,
+  StyledDetailWrapper,
+  StyledFeaturedImageWrapper,
+  StyledDetails
 };

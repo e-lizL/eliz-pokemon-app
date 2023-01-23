@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+import styled from 'styled-components';
 import axios from "axios";
 import { useState, useEffect } from "react";
 import {
@@ -6,10 +8,14 @@ import {
   Divider,
   OuterCircle,
   InnerCircle,
-  LeftSelect,
-  RightSelect,
-  CircleContainer
+  LeftTriangle,
+  RightTriangle,
+  CircleContainer,
+  StyledDetailWrapper,
+  StyledFeaturedImageWrapper,
+  StyledDetails
 } from "../AppStyles";
+
 
 interface HeaderProps {
   featuredPokemonUrl: string;
@@ -51,12 +57,40 @@ export default function Header({ featuredPokemonUrl, pokemonIndex, setPokemonInd
         <MainCard>
           {featuredPokemonData &&
             <>
-              {/* @ts-ignore */}
-              <img src={featuredPokemonData.sprites.other.dream_world.front_default}
-                alt="featured pokemon"
-              />
-              {/* @ts-ignore */}
-              <h3>{featuredPokemonData.name}</h3> 
+              <StyledFeaturedImageWrapper>
+                {/* @ts-ignore */}
+                <img src={featuredPokemonData.sprites.other.dream_world.front_default}
+                  alt="featured pokemon"
+                />
+               </StyledFeaturedImageWrapper>
+              
+              <StyledDetails>
+
+                <StyledDetailWrapper>     
+                    <div>Name:</div> 
+                    {/* @ts-ignore */}
+                    {featuredPokemonData.name}   
+                </StyledDetailWrapper>
+
+                <StyledDetailWrapper>     
+                    <div>Types:</div> 
+                    {/* @ts-ignore */}
+                    {featuredPokemonData.types.map(p => <div key={uuidv4()}>{p.type.name}</div>)}   
+                </StyledDetailWrapper>
+
+                <StyledDetailWrapper>     
+                    <div>Abilities:</div> 
+                    {/* @ts-ignore */}
+                    {featuredPokemonData.abilities.map(p => <div key={uuidv4()}>{p.ability.name}</div>)}   
+                </StyledDetailWrapper>
+
+                <StyledDetailWrapper>     
+                    <div>Weight:</div> 
+                    {/* @ts-ignore */}
+                    <div>{featuredPokemonData.weight}</div>   
+                </StyledDetailWrapper>
+
+              </StyledDetails>
             </>
           } 
         </MainCard>
@@ -67,8 +101,8 @@ export default function Header({ featuredPokemonUrl, pokemonIndex, setPokemonInd
       <CircleContainer>
         <OuterCircle>
           <InnerCircle>
-            <LeftSelect onClick={handleDecrement} />
-            <RightSelect onClick={handleIncrement}/>
+            <LeftTriangle onClick={handleDecrement} />
+            <RightTriangle onClick={handleIncrement}/>
           </InnerCircle>
         </OuterCircle>
       </CircleContainer>

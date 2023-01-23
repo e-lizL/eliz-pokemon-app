@@ -10,28 +10,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   margin: 0;
   padding: 0;
   font-weight: normal;
-  font-family: 'Black Han Sans', sans-serif;
-}
-
-button {
-  font-family: 'Black Han Sans', sans-serif;
-}
-
-select {
-  font-family: 'Black Han Sans', sans-serif;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: Arial;
 }
 
 ol, ul {
@@ -42,4 +26,9 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* //Global Colour */
+:root {
+   --red: #ce2222;
 }
