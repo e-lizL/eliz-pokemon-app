@@ -21,7 +21,7 @@ function App() {
   const [pokemonData, setPokemonData] = useState<Pokemon[]>([]);
   const [pokemonNames, setPokemonNames] = useState<string[]>([]);
   const [selectValue, setSelectValue] = useState('');
-
+  const [circleButtonActive, setCircleButtonActive] = useState(true)
 
   useEffect(() => {
     const getPokemonData = async () => {
@@ -42,12 +42,15 @@ function App() {
   return (
     <>
       <Header 
-      selectValue={selectValue} 
+      selectValue={selectValue}
+      circleButtonActive={circleButtonActive}
+      setCircleButtonActive={setCircleButtonActive} 
       />
       <SelectPokemon
         pokemonNames={pokemonNames}
         selectValue={selectValue}
         setSelectValue={setSelectValue}
+        setCircleButtonActive={setCircleButtonActive}
       />
       <PokemonCards pokemonData={pokemonData}/>
     </>

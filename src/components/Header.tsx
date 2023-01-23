@@ -16,32 +16,35 @@ import {
   StyledDetails
 } from "../AppStyles";
 
-
 interface HeaderProps {
   selectValue: string;
+  circleButtonActive: boolean;
+  setCircleButtonActive: (value: boolean) => void;
 }
 
-export default function Header({ selectValue }: HeaderProps) {
+export default function Header({ selectValue, circleButtonActive, setCircleButtonActive }: HeaderProps) {
   const [featuredPokemonData, setFeaturedPokemonData] = useState();
-  const [pokemonIndex, setPokemonIndex] = useState(1);
-  const pokemonUrlIndex = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}`;
-  const pokemonUrlName = `https://pokeapi.co/api/v2/pokemon/${selectValue}`;
+  const [pokemonIndex, setPokemonIndex] = useState(25);
+  const [featuredPokemonUrl, setFeaturedPokemonUrl] = useState(`https://pokeapi.co/api/v2/pokemon/pikachu`);
+  
   
 
   useEffect(() => {
+    circleButtonActive ?
+      setFeaturedPokemonUrl(`https://pokeapi.co/api/v2/pokemon/${pokemonIndex}`)
+      :
+      setFeaturedPokemonUrl(`https://pokeapi.co/api/v2/pokemon/${selectValue}`)
+
     const getFeaturedPokemon = async () => {
-      if (selectValue) {
-      const poke = await axios.get(pokemonUrlName);
+      const poke = await axios.get(featuredPokemonUrl);
       setFeaturedPokemonData(poke.data);
-      return
     }
-    const poke = await axios.get(pokemonUrlIndex);
-    setFeaturedPokemonData(poke.data);
-  }
+  
     getFeaturedPokemon();
-  }, [pokemonUrlIndex, pokemonUrlName, selectValue]);
+  }, [featuredPokemonUrl, pokemonIndex, selectValue]);
 
   const handleDecrement = () => {
+    setCircleButtonActive(true);
     if (pokemonIndex === 1) {
       setPokemonIndex(150)
       return;
@@ -50,6 +53,7 @@ export default function Header({ selectValue }: HeaderProps) {
   }
   
   const handleIncrement = () => {
+    setCircleButtonActive(true);
     if (pokemonIndex === 150) {
       setPokemonIndex(1)
       return;
