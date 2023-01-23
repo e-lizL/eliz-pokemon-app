@@ -31,7 +31,7 @@ const PokemonList = ({ pokemonData }) => {
        { pokemonData.map(pokemon => (
           <PokemonCard key={"name"}>
             <img 
-            src="https://via.placeholder.com/150"
+            src={pokemon.sprites.front_default}
             alt="placeholder"
             width="150"
             height="150" />

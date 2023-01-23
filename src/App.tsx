@@ -18,8 +18,6 @@ interface Pokemons {
 
 function App() {
   const [pokemonData, setPokemonData] = useState<Pokemon[]>([]);
-  const [dataTest, setDataTest] = useState<AxiosResponse | null>(null); 
-
 
   useEffect(() => {
     const getPokemonData = async () => {
@@ -27,21 +25,17 @@ function App() {
 
       const res = await axios.get(pokemonUrl);
 
-      setDataTest(res.data.results)
-
-      // res.data.results.forEach(async (pokemon: Pokemons) => {
-      //   const poke = await axios.get(
-      //     `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
-      //   );
-      //   setPokemonData((p) => [...p, poke.data]);
-      // });
+       res.data.results.forEach(async (pokemon: Pokemons) => {
+        const poke = await axios.get(
+          `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
+        );
+        console.log(poke)
+        setPokemonData((p) => [...p, poke.data]);
+       });
 
     };
     getPokemonData();
     }, []);
-
-    console.log(dataTest);
-   
 
   return (
     <>
