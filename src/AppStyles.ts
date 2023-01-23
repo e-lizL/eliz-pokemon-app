@@ -18,6 +18,7 @@ const MainCard = styled.div`
   border-radius: 10px;
   border: 2px solid black;
   display: flex;
+  flex-direction: column;
   padding: 0 20px;
 `;
 

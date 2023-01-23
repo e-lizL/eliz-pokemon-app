@@ -40,7 +40,11 @@ function App() {
 
   return (
     <>
-      <Header featuredPokemonUrl={featuredPokemonUrl} />
+      <Header 
+      featuredPokemonUrl={featuredPokemonUrl} 
+      pokemonIndex={pokemonIndex}
+      setPokemonIndex={setPokemonIndex}  
+      />
       <SelectPokemon/>
       <PokemonList pokemonData={pokemonData}/>
     </>
