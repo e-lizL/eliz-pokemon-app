@@ -1,6 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import styled from 'styled-components';
+
+const Pokemon = styled.div`
+  border: 1px solid green;
+`;
 
 const ApiData = () => {
   const [pokemonData, setPokemonData] = useState([]);
@@ -9,20 +14,22 @@ const ApiData = () => {
   useEffect(() => {
     axios
     .get(pokemonUrl)
-    .then((response) => {setPokemonData(response.data);
+    .then((response) => {setPokemonData(response.data.results);
     });
    }, []);
     
-   console.log(pokemonData.results);
+  //  console.log(pokemonData.results);
+
+
   return (
-   <>
-      {/* { pokemonData.map(pokemon => (
-        <div key={uuidv4()}>
-          <div>{pokemon.name}</div>
-          <div>{pokemon.url}</div>
-        </div>
-      ))} */}
-    </>   
+   <div>
+       { pokemonData.map(pokemon => (
+          <Pokemon key={uuidv4()}>
+            <div>{pokemon.name}</div>
+            <div>{pokemon.url}</div>
+          </Pokemon>
+      ))} 
+    </div>   
   )
 };
 

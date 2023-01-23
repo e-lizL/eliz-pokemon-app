@@ -19,7 +19,6 @@ function App() {
     <>
       <HeaderWrapper>
         <CardContainer>
-          <ApiData/>
         </CardContainer>
       </HeaderWrapper>
       
@@ -40,6 +39,10 @@ function App() {
         </StyledSelectLabel>
         <StyledSelect />
       </StyledSelectWrapper> 
+
+      <ApiData/>
+
+      
 
     </>
   );
