@@ -4,8 +4,7 @@ import { RightArrow } from "@styled-icons/boxicons-solid/RightArrow";
 
 const HeaderWrapper = styled.div`
   background: #ce2222;
-  border: 4px solid green;
-  padding: 80px 0 140px;
+  padding: 80px 0 160px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +17,7 @@ const CardContainer = styled.div`
   background: white;
   border-radius: 10px;
   border: 2px solid black;
-  display: inline-block;
+  display: flex;
   padding: 20px;
 `;
 
@@ -27,7 +26,12 @@ const Divider = styled.div`
   background: black;
 `;
 
+const CircleContainer = styled.div`
+margin: -150px;
+`;
+
 const OuterCircle = styled.div`
+  background: white;  
   width: 250px;
   height: 250px;
   border-radius: 100%;
@@ -36,16 +40,12 @@ const OuterCircle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  z-index: 999;
-  backgound: white;
 `;
 
 const InnerCircle = styled(OuterCircle)`
   width: 210px;
   height: 210px;
   border: 4px solid black;
-  display: flex;
   justify-content: space-around;
 `;
 
@@ -85,6 +85,7 @@ export {
   HeaderWrapper,
   CardContainer,
   Divider,
+  CircleContainer,
   OuterCircle,
   InnerCircle,
   LeftSelect,

@@ -9,6 +9,7 @@ import {
   StyledSelectLabel,
   StyledSelect,
   StyledSelectWrapper,
+  CircleContainer
 } from "./AppStyles";
 
 function App() {
@@ -19,18 +20,25 @@ function App() {
           <h1>Hello from React</h1>
         </CardContainer>
       </HeaderWrapper>
-      <Divider>
+      
+      <Divider/>
+
+      <CircleContainer>
         <OuterCircle>
           <InnerCircle>
             <LeftSelect />
             <RightSelect />
           </InnerCircle>
         </OuterCircle>
-      </Divider>
-      <StyledSelectWrapper>
-        <StyledSelectLabel>Choose your Pokemon:</StyledSelectLabel>
+      </CircleContainer>
+
+      {/* <StyledSelectWrapper>
+        <StyledSelectLabel>
+          Choose your Pokemon:
+        </StyledSelectLabel>
         <StyledSelect />
-      </StyledSelectWrapper>
+      </StyledSelectWrapper> */}
+
     </>
   );
 }
