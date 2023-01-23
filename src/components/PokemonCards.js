@@ -16,8 +16,7 @@ const StyledPokemonCards = styled.div`
 const PokemonCard = styled.div`
   border: 1px solid gray;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  background:  #e6e2e2;
+  background: var(--light-gray);
   padding: 12px;
 `;
 

@@ -21,6 +21,7 @@ function App() {
   const [pokemonData, setPokemonData] = useState<Pokemon[]>([]);
   const [pokemonIndex, setPokemonIndex] = useState(1);
   const [pokemonNames, setPokemonNames] = useState<string[]>([]);
+  const [selectValue, setSelectValue] = useState('');
 
   const featuredPokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}`;
 
@@ -49,6 +50,8 @@ function App() {
       />
       <SelectPokemon
         pokemonNames={pokemonNames}
+        selectValue={selectValue}
+        setSelectValue={setSelectValue}
       />
       <PokemonCards pokemonData={pokemonData}/>
     </>
