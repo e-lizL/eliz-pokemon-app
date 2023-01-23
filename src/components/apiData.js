@@ -1,10 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components';
 
 const PokemonList = styled.div`
-  border: 1px solid green; 
+  /* border: 1px solid green;   */
   width: 98%;
   margin: 0 auto;
   display: grid;
@@ -12,9 +11,20 @@ const PokemonList = styled.div`
   grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
   img {
     margin: 0 auto;
-  }
+  } 
+`; 
+
+const PokemonCard = styled.div`
+border: 1px solid gray;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+background:  #e6e2e2;
+padding: 12px;
 `;
 
+const PokemonName = styled.div`
+  margin-top: 8px;
+`
 
 const ApiData = () => {
   const [pokemonData, setPokemonData] = useState([]);
@@ -27,20 +37,22 @@ const ApiData = () => {
     });
    }, []);
 
+   //  console.log(pokemonData.results);
+
    pokemonData.sort((a,b) => a.name.localeCompare(b.name));
     
-  //  console.log(pokemonData.results);
-
-
   return (
-   <div>
+   <PokemonList>
        { pokemonData.map(pokemon => (
-          <PokemonList key={uuidv4()}>
-            <div>{pokemon.name}</div>
-            {/* <div>{pokemon.url}</div> */}
-          </PokemonList>
+          <PokemonCard key={"name"}>
+            <img src="https://via.placeholder.com/150"
+            alt="placeholder"
+            width="150"
+            height="150" />
+            <PokemonName>{pokemon.name}</PokemonName> 
+          </PokemonCard>
       ))} 
-    </div>   
+    </PokemonList>   
   )
 };
 
