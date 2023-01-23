@@ -4,42 +4,34 @@ import axios, { AxiosResponse } from "axios";
 import PokemonCards from './components/PokemonCards';
 import Header from './components/Header';
 import SelectPokemon from './components/SelectPokemon';
-
-interface Pokemon {
-    id: number;
-    name: string;
-    sprites: {
-      front_default: string;
-    };
-  }
-
-interface Pokemon {
-  name: string;
-  url: string;
-}
+import { PokemonStats } from './interfaces';
 
 function App() {
-  const [pokemonData, setPokemonData] = useState<Pokemon[]>([]);
+  const [pokemonData, setPokemonData] = useState<PokemonStats[]>([]);
   const [selectValue, setSelectValue] = useState("");
   const [activeCircleSwitch, setActiveCircleSwitch] = useState(true);
 
   useEffect(() => {
     const getPokemonData = async () => {
       const pokemonUrl = "https://pokeapi.co/api/v2/pokemon?limit=151";
-      const res = await axios.get(pokemonUrl);
-      // @ts-ignore
-      alphabetData.forEach(async (pokemon: Pokemon) => {
-        const poke = await axios.get(
-          `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
-        );
-        setPokemonData((p) => [...p, poke.data]);
-      });
+      try {
+        const res = await axios.get(pokemonUrl)
+        /* @ts-ignore */
+        const alphabetData = res.data.results.sort((a, b) => a.name.localeCompare(b.name));
+        alphabetData.forEach(async (pokemon: PokemonStats) => {
+          const poke = await axios.get(
+            `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
+          );
+          setPokemonData((p) => [...p, poke.data]);
+        });
+      } catch (error) {
+        console.log(error)
+      }
     };
     getPokemonData();
   }, []);
 
-  pokemonData.map(pokemon => console.log(pokemon.name))
-
+  
   return (
     <>
       <Header 
