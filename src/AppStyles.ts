@@ -3,7 +3,7 @@ import { LeftArrow } from "@styled-icons/boxicons-solid/LeftArrow";
 import { RightArrow } from "@styled-icons/boxicons-solid/RightArrow";
 
 const HeaderWrapper = styled.div`
-  background: var(--pokemon-red); 
+  background: var(--pokemon-red);
   padding: 80px 0 160px;
   display: flex;
   align-items: center;
@@ -11,7 +11,6 @@ const HeaderWrapper = styled.div`
 `;
 
 const MainCard = styled.div`
-  /* height: 200px; */
   margin-top: 50px;
   margin: 0 auto;
   background: white;
@@ -25,10 +24,10 @@ const MainCard = styled.div`
 const StyledFeaturedImageWrapper = styled.div`
   display: flex;
   justify-content: center;
-  img{ 
+  img {
     height: 300px;
     width: 300px;
-    }
+  }
 `;
 
 const StyledDetails = styled.div`
@@ -36,13 +35,14 @@ const StyledDetails = styled.div`
 `;
 
 const StyledDetailWrapper = styled.div`
+  margin-top: 20px;
   display: flex;
   gap: 1rem;
   font-size: 1.2rem;
   div:first-child {
     font-family: 'Black Han Sans', sans-serif;
   }
-`
+`;
 
 const Divider = styled.div`
   height: 40px;
@@ -52,6 +52,15 @@ const Divider = styled.div`
 const CircleContainer = styled.div`
   margin: -150px auto;
   display: flex;
+`;
+
+const StyledButton = styled.button`
+  background: var(--pokemon-red);
+  color: var(--off-white);
+  padding: 15px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
 `;
 
 const OuterCircle = styled.div`
@@ -64,6 +73,7 @@ const OuterCircle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  /* border: 1px solid red; */
 `;
 
 const InnerCircle = styled(OuterCircle)`
@@ -77,8 +87,7 @@ const LeftTriangle = styled(LeftArrow)`
   color: black;
   height: 60px;
   &:hover, &:active, &:focus {
-    color: var(--pokemon-red); 
-    border-radius: 10px 0px 0px 0px;
+    color: red;
   }
 `;
 
@@ -86,7 +95,7 @@ const RightTriangle = styled(RightArrow)`
   color: black;
   height: 60px;
   &:hover, &:active, &:focus {
-    color: var(--pokemon-red); 
+    color: red;
   }
 `;
 
@@ -102,7 +111,7 @@ const StyledSelect = styled.select`
   display: flex;
   font-size: 1.2rem;
   border-radius: 20px;
-  background: var(--light-gray);
+  background: var(--off-white);
 `;
 
 const StyledSelectWrapper = styled.div`
@@ -111,15 +120,6 @@ const StyledSelectWrapper = styled.div`
   align-items: center;
   padding: 200px 0 80px;
 `;
-
-const StyledButton = styled.div`
-  background: var(--pokemon-red);
-  color: white;
-  font-size: 1rem;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 20px;
-`
 
 export {
   HeaderWrapper,
