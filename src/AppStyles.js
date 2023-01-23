@@ -65,20 +65,20 @@ const StyledSelectLabel = styled.label`
 `;
 
 const StyledSelect = styled.select`
-  height: 45px;
+  height: 35px;
   width: 200px;
   padding: 0 20px;
   display: flex;
   font-size: 1.2rem;
   border-radius: 20px;
-  background: gray;
-  color: white;s
+  background: #f5f5f5;
 `;
 
 const StyledSelectWrapper = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
+  padding: 200px 0 80px;
 `;
 
 export {

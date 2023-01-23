@@ -32,12 +32,12 @@ function App() {
         </OuterCircle>
       </CircleContainer>
 
-      {/* <StyledSelectWrapper>
+      <StyledSelectWrapper>
         <StyledSelectLabel>
           Choose your Pokemon:
         </StyledSelectLabel>
         <StyledSelect />
-      </StyledSelectWrapper> */}
+      </StyledSelectWrapper> 
 
     </>
   );
