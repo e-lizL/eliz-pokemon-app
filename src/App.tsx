@@ -20,6 +20,7 @@ interface Pokemons {
 function App() {
   const [pokemonData, setPokemonData] = useState<Pokemon[]>([]);
   const [pokemonIndex, setPokemonIndex] = useState(1);
+  const [pokemonNames, setPokemonNames] = useState<string[]>([]);
 
   const featuredPokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}`;
 
@@ -33,6 +34,7 @@ function App() {
           `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
         );
         setPokemonData((p) => [...p, poke.data]);
+        setPokemonNames((p) => [...p, pokemon.name]);
        });
     };
     getPokemonData();
@@ -45,7 +47,9 @@ function App() {
       pokemonIndex={pokemonIndex}
       setPokemonIndex={setPokemonIndex}  
       />
-      <SelectPokemon/>
+      <SelectPokemon
+        pokemonNames={pokemonNames}
+      />
       <PokemonCards pokemonData={pokemonData}/>
     </>
   );
