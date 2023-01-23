@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components';
 
 const StyledPokemonList = styled.div`
@@ -29,12 +30,13 @@ const PokemonList = ({ pokemonData }) => {
   return (
    <StyledPokemonList>
        { pokemonData.map(pokemon => (
-          <PokemonCard key={"name"}>
+          <PokemonCard key={uuidv4()}>
             <img 
-            src={pokemon.sprites.front_default}
-            alt="placeholder"
-            width="150"
-            height="150" />
+              src={pokemon.sprites.front_default}
+              alt="placeholder"
+              width="150"
+              height="150" 
+            />
             <PokemonName>{pokemon.name}</PokemonName> 
           </PokemonCard>
       ))} 

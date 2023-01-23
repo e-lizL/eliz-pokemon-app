@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+//AxiosRespose is a typing tool, for when you are testing data fetching & don't want typescript on your back 
 import { useState, useEffect } from "react";
 import PokemonList from './components/PokemonList';
 import Header from './components/Header';
@@ -18,28 +19,28 @@ interface Pokemons {
 
 function App() {
   const [pokemonData, setPokemonData] = useState<Pokemon[]>([]);
+  const [pokemonIndex, setPokemonIndex] = useState(1);
+
+  const featuredPokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}`;
 
   useEffect(() => {
     const getPokemonData = async () => {
       const pokemonUrl = "https://pokeapi.co/api/v2/pokemon?limit=151";
-
       const res = await axios.get(pokemonUrl);
 
-       res.data.results.forEach(async (pokemon: Pokemons) => {
+      res.data.results.forEach(async (pokemon: Pokemons) => {
         const poke = await axios.get(
           `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
         );
-        console.log(poke)
         setPokemonData((p) => [...p, poke.data]);
        });
-
     };
     getPokemonData();
     }, []);
 
   return (
     <>
-      <Header/>
+      <Header featuredPokemonUrl={featuredPokemonUrl} />
       <SelectPokemon/>
       <PokemonList pokemonData={pokemonData}/>
     </>

@@ -10,7 +10,7 @@ const HeaderWrapper = styled.div`
   justify-content: center;
 `;
 
-const CardContainer = styled.div`
+const MainCard = styled.div`
   height: 200px;
   margin-top: 50px;
   margin: 0 auto;
@@ -18,7 +18,7 @@ const CardContainer = styled.div`
   border-radius: 10px;
   border: 2px solid black;
   display: flex;
-  padding: 20px;
+  padding: 0 20px;
 `;
 
 const Divider = styled.div`
@@ -83,7 +83,7 @@ const StyledSelectWrapper = styled.div`
 
 export {
   HeaderWrapper,
-  CardContainer,
+  MainCard,
   Divider,
   CircleContainer,
   OuterCircle,
