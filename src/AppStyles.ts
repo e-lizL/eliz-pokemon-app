@@ -112,6 +112,15 @@ const StyledSelectWrapper = styled.div`
   padding: 200px 0 80px;
 `;
 
+const StyledButton = styled.div`
+  background: var(--pokemon-red);
+  color: white;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+`
+
 export {
   HeaderWrapper,
   MainCard,
@@ -126,5 +135,6 @@ export {
   StyledSelectWrapper,
   StyledDetailWrapper,
   StyledFeaturedImageWrapper,
-  StyledDetails
+  StyledDetails,
+  StyledButton,
 };

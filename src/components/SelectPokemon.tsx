@@ -7,15 +7,6 @@ import {
   StyledSelectWrapper,
 } from ".././AppStyles";
 
-const StyledButton = styled.div`
-  background: var(--pokemon-red);
-  color: white;
-  font-size: 1rem;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 20px;
-`
-
 interface NamesProps {
   pokemonNames: string[];
   selectValue: string;
@@ -32,7 +23,6 @@ export default function SelectPokemon({ pokemonNames, selectValue, setSelectValu
         <StyledSelect value={selectValue} onChange={e => setSelectValue(e.target.value)}>
           {pokemonNames && pokemonNames.map(name => <option key={uuidv4()} value={name}>{name}</option>)}
         </StyledSelect>
-        <StyledButton>Submit</StyledButton>
       </StyledSelectWrapper>  
     </>
   )

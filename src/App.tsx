@@ -19,11 +19,9 @@ interface Pokemons {
 
 function App() {
   const [pokemonData, setPokemonData] = useState<Pokemon[]>([]);
-  const [pokemonIndex, setPokemonIndex] = useState(1);
   const [pokemonNames, setPokemonNames] = useState<string[]>([]);
   const [selectValue, setSelectValue] = useState('');
 
-  const featuredPokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}`;
 
   useEffect(() => {
     const getPokemonData = async () => {
@@ -44,9 +42,7 @@ function App() {
   return (
     <>
       <Header 
-      featuredPokemonUrl={featuredPokemonUrl} 
-      pokemonIndex={pokemonIndex}
-      setPokemonIndex={setPokemonIndex}  
+      selectValue={selectValue} 
       />
       <SelectPokemon
         pokemonNames={pokemonNames}

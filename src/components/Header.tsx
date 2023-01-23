@@ -18,21 +18,28 @@ import {
 
 
 interface HeaderProps {
-  featuredPokemonUrl: string;
-  setPokemonIndex: (value: number) => void;
-  pokemonIndex: number;
+  selectValue: string;
 }
 
-export default function Header({ featuredPokemonUrl, pokemonIndex, setPokemonIndex }: HeaderProps) {
+export default function Header({ selectValue }: HeaderProps) {
   const [featuredPokemonData, setFeaturedPokemonData] = useState();
+  const [pokemonIndex, setPokemonIndex] = useState(1);
+  const pokemonUrlIndex = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}`;
+  const pokemonUrlName = `https://pokeapi.co/api/v2/pokemon/${selectValue}`;
+  
 
   useEffect(() => {
     const getFeaturedPokemon = async () => {
-      const poke = await axios.get(featuredPokemonUrl);
+      if (selectValue) {
+      const poke = await axios.get(pokemonUrlName);
       setFeaturedPokemonData(poke.data);
+      return
     }
+    const poke = await axios.get(pokemonUrlIndex);
+    setFeaturedPokemonData(poke.data);
+  }
     getFeaturedPokemon();
-  }, [featuredPokemonUrl]);
+  }, [pokemonUrlIndex, pokemonUrlName, selectValue]);
 
   const handleDecrement = () => {
     if (pokemonIndex === 1) {
