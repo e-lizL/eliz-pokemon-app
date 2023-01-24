@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { PokemonStats } from '../interfaces';
 import {
@@ -55,7 +55,6 @@ const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
           </StyledCloseButton>
           <div>
               <StyledFeaturedImageWrapper>
-                {/* @ts-ignore */}
                 <img src={featuredPokemon.sprites.other.dream_world.front_default} 
                   alt="featured pokemon"
                 />
@@ -69,7 +68,6 @@ const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
 
                 <StyledDetailWrapper>
                   <div>Types:</div>
-                  {/* @ts-ignore */}
                   {featuredPokemon.types.map(p => <div key={uuidv4()}>{p.type.name}</div>)}
                 </StyledDetailWrapper>
 

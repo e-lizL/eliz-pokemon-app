@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
 import {
   HeaderWrapper,

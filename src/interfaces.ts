@@ -1,7 +1,12 @@
 export interface PokemonStats {
   abilities: {
     ability: {
-      name: string
+      name: string;
+    }
+  }[];
+  types: {
+    type: {
+      name: string;
     }
   }[];
   id: number;
