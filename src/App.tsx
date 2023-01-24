@@ -3,12 +3,10 @@ import axios, { AxiosResponse } from "axios";
 // AxiosResponse is typing tool, for when you are testing data fetching and don't want Typescript on your back
 import PokemonCards from './components/PokemonCards';
 import Header from './components/Header';
-import SelectPokemon from './components/SelectPokemon';
 import { PokemonStats } from './interfaces';
 
 function App() {
   const [pokemonData, setPokemonData] = useState<PokemonStats[]>([]);
-  const [selectValue, setSelectValue] = useState("");
   const [activeCircleSwitch, setActiveCircleSwitch] = useState(true);
 
   useEffect(() => {
@@ -35,15 +33,11 @@ function App() {
   return (
     <>
       <Header 
-        selectValue={selectValue}
         activeCircleSwitch={activeCircleSwitch}
         setActiveCircleSwitch={setActiveCircleSwitch}
       />
       <SelectPokemon 
         pokemonData={pokemonData}
-        selectValue={selectValue}
-        setSelectValue={setSelectValue}
-        setActiveCircleSwitch={setActiveCircleSwitch}
       />
       <PokemonCards 
         pokemonData={pokemonData} 
