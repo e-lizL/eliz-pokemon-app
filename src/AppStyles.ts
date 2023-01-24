@@ -151,7 +151,19 @@ const StyledFeaturedCard = styled(MainCard)`
   width: 30em;
   height: 36em;
   margin-top: -18em;
-  margin-left: -15em;
+  margin-left: -18em;
+  z-index: 99;
+`;
+
+const StyledOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: black;
+  opacity: 0.8;
+  height: 100%;
+  width: 100%;
+  z-index: 90;
 `;
 
 const StyledCloseButton = styled.button`
@@ -181,4 +193,5 @@ export {
   StyledPokemonName,
   StyledFeaturedCard,
   StyledCloseButton,
+  StyledOverlay
 };
