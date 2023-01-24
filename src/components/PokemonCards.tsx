@@ -24,6 +24,9 @@ interface Detail {
 }
 
 const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
+
+  const [featuredPokemon, setFeaturedPokemon] = useState(pokemonData[3])
+
   const [viewDetails, setViewDetails] = useState<Detail>({
     id: 0,
     isOpened: false,
@@ -51,7 +54,7 @@ const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
           <div>
               <StyledFeaturedImageWrapper>
                 {/* @ts-ignore */}
-                <img src={pokemonData[0].sprites.other.dream_world.front_default} 
+                <img src={featuredPokemon.sprites.other.dream_world.front_default} 
                   alt="featured pokemon"
                 />
               </StyledFeaturedImageWrapper>
@@ -60,25 +63,25 @@ const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
                 <StyledDetailWrapper>
                   <div>Name:</div>
                   {/* @ts-ignore */}
-                  <div>{pokemonData[0].name}</div>
+                  <div>{featuredPokemon.name}</div>
                 </StyledDetailWrapper>
 
                 <StyledDetailWrapper>
                   <div>Types:</div>
                   {/* @ts-ignore */}
-                  {pokemonData[0].types.map(p => <div key={uuidv4()}>{p.type.name}</div>)}
+                  {featuredPokemon.types.map(p => <div key={uuidv4()}>{p.type.name}</div>)}
                 </StyledDetailWrapper>
 
                 <StyledDetailWrapper>
                   <div>Abilities:</div>
                   {/* @ts-ignore */}
-                  {pokemonData[0].abilities.map(p => <div key={uuidv4()}>{p.ability.name}</div>)}
+                  {featuredPokemon.abilities.map(p => <div key={uuidv4()}>{p.ability.name}</div>)}
                 </StyledDetailWrapper>
 
                 <StyledDetailWrapper>
                   <div>Weight:</div>
                   {/* @ts-ignore */}
-                  <div>{pokemonData[0].weight}</div>
+                  <div>{featuredPokemon.weight}</div>
                 </StyledDetailWrapper>
               </StyledDetails>
               </div>
