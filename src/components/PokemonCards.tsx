@@ -64,7 +64,6 @@ const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
               <StyledDetails>
                 <StyledDetailWrapper>
                   <div>Name:</div>
-                  {/* @ts-ignore */}
                   <div>{featuredPokemon.name}</div>
                 </StyledDetailWrapper>
 
@@ -76,13 +75,11 @@ const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
 
                 <StyledDetailWrapper>
                   <div>Abilities:</div>
-                  {/* @ts-ignore */}
                   {featuredPokemon.abilities.map(p => <div key={uuidv4()}>{p.ability.name}</div>)}
                 </StyledDetailWrapper>
 
                 <StyledDetailWrapper>
                   <div>Weight:</div>
-                  {/* @ts-ignore */}
                   <div>{featuredPokemon.weight} kg</div>
                 </StyledDetailWrapper>
               </StyledDetails>
