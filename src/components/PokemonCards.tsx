@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import { PokemonStats } from '../interfaces';
 import {
@@ -7,45 +6,12 @@ import {
   StyledDetailWrapper,
   StyledFeaturedImageWrapper,
   StyledDetails,
+  StyledPokemonCards,
+  StyledPokemonCard,
+  StyledPokemonName,
+  StyledFeaturedCard,
+  StyledCloseButton,
 } from ".././AppStyles";
-
-const StyledPokemonCards = styled.div`
-  width: 98%;
-  margin: 0 auto;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
-  img {
-    margin: 0 auto;
-  } 
-`; 
-
-const StyledPokemonCard = styled.div`
-  border: 1px solid gray;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  background:  #e6e2e2;
-  padding: 12px;
-`;
-
-const StyledPokemonName = styled.div`
-  margin-top: 8px;
-`;
-
-const StyledFeaturedCard = styled(MainCard)`
-  position: absolute;
-  left: 0; 
-  right: 0; 
-  margin: 30px auto 0; 
-  width: 80%;
-  max-width: 400px;
-`;
-
-const StyledCloseButton = styled.button`
-  padding: 8px;
-  font-size: 1.1rem;
-  width: 40px;
-`;
 
 interface PokemonCardsProps {
   pokemonData: PokemonStats[];
@@ -113,7 +79,7 @@ const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
                 <div>{pokemonData[0].weight}</div>
               </StyledDetailWrapper>
             </StyledDetails>
-            
+
           </div>
         </StyledFeaturedCard>
       }
