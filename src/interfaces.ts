@@ -1,10 +1,10 @@
 export interface PokemonStats {
-  abilities: {
+  abilities?: {
     ability: {
       name: string;
     }
   }[];
-  types: {
+  types?: {
     type: {
       name: string;
     }
