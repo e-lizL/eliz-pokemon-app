@@ -35,10 +35,9 @@ function App() {
       <Header 
         activeCircleSwitch={activeCircleSwitch}
         setActiveCircleSwitch={setActiveCircleSwitch}
-      />
-      <SelectPokemon 
         pokemonData={pokemonData}
       />
+
       <PokemonCards 
         pokemonData={pokemonData} 
       />

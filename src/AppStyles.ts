@@ -4,14 +4,15 @@ import { RightArrow } from "@styled-icons/boxicons-solid/RightArrow";
 
 const HeaderWrapper = styled.div`
   background: var(--pokemon-red);
-  padding: 80px 0 160px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 50px;
+  padding: 50px 0 150px;
+  height: auto;
 `;
 
 const MainCard = styled.div`
-  margin-top: 50px;
   margin: 0 auto;
   background: white;
   border-radius: 10px;
@@ -118,12 +119,11 @@ const StyledSelectWrapper = styled.div`
   display: flex;
   gap: 20px;
   align-items: center;
-  padding: 200px 0 80px;
 `;
 
 const StyledPokemonCards = styled.div`
   width: 98%;
-  margin: 0 auto;
+  margin: 200px auto 50px;
   display: grid;
   gap: 20px;
   grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
