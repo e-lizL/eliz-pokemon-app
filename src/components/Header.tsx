@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
+import { PokemonStats } from '../interfaces';
 import {
   HeaderWrapper,
   MainCard,
@@ -22,7 +23,7 @@ interface HeaderProps {
 }
 
 export default function Header({ selectValue, activeCircleSwitch, setActiveCircleSwitch }: HeaderProps) {
-  const [featuredPokemonData, setFeaturedPokemonData] = useState();
+  const [featuredPokemonData, setFeaturedPokemonData] = useState<PokemonStats>();
   const [pokemonIndex, setPokemonIndex] = useState(25)
   const [featuredPokemonUrl, setFeaturedPokemonUrl] = useState("https://pokeapi.co/api/v2/pokemon/pikachu");
 
@@ -76,7 +77,6 @@ export default function Header({ selectValue, activeCircleSwitch, setActiveCircl
 
                 <StyledDetailWrapper>
                   <div>Name:</div>
-                  {/* @ts-ignore */}
                   <div>{featuredPokemonData.name}</div>
                 </StyledDetailWrapper>
 
