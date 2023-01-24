@@ -4,14 +4,7 @@ import {
   StyledSelect,
   StyledSelectWrapper
 } from ".././AppStyles";
-import { PokemonStats } from '../interfaces';
-
-interface SelectProps {
-  pokemonData: PokemonStats[];
-  selectValue: string;
-  setSelectValue: (value: string) => void;
-  setActiveCircleSwitch: (value: boolean) => void;
-}
+import { SelectProps } from '../interfaces';
 
 export default function SelectPokemon({ pokemonData, selectValue, setSelectValue, setActiveCircleSwitch }: SelectProps) {
 

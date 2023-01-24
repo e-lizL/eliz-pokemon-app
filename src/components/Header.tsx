@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
 import SelectPokemon from './SelectPokemon';
-import { PokemonStats } from '../interfaces';
+import { PokemonStats, HeaderProps } from '../interfaces';
 import {
   HeaderWrapper,
   MainCard,
@@ -18,12 +18,6 @@ import {
   StyledLoadingMessage
 } from ".././AppStyles";
 
-interface HeaderProps {
-  activeCircleSwitch: boolean;
-  setActiveCircleSwitch: (value: boolean) => void;
-  pokemonData: PokemonStats[];
-  isLoading: boolean;
-}
 
 export default function Header({ isLoading, activeCircleSwitch, setActiveCircleSwitch, pokemonData }: HeaderProps) {
   const [featuredPokemonData, setFeaturedPokemonData] = useState<PokemonStats>();

@@ -20,4 +20,27 @@ export interface PokemonStats {
     }
   };
   weight: number;
-  };
+  }
+
+  export interface HeaderProps {
+    activeCircleSwitch: boolean;
+    setActiveCircleSwitch: (value: boolean) => void;
+    pokemonData: PokemonStats[];
+    isLoading: boolean;
+  }
+  
+  export interface PokemonCardsProps {
+    pokemonData: PokemonStats[];
+  }
+  
+  export interface CardDetails {
+    id: number;
+    isOpened: boolean;
+  }
+  
+  export interface SelectProps {
+    pokemonData: PokemonStats[];
+    selectValue: string;
+    setSelectValue: (value: string) => void;
+    setActiveCircleSwitch: (value: boolean) => void;
+  }

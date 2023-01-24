@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { PokemonStats } from '../interfaces';
+import { PokemonCardsProps, CardDetails } from '../interfaces';
 import {
   MainCard,
   StyledDetailWrapper,
@@ -14,20 +14,11 @@ import {
   StyledCloseButton,
 } from ".././AppStyles";
 
-interface PokemonCardsProps {
-  pokemonData: PokemonStats[];
-}
-
-interface Detail {
-  id: number;
-  isOpened: boolean;
-}
-
 const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
 
   const [featuredPokemon, setFeaturedPokemon] = useState(pokemonData[5])
 
-  const [viewDetails, setViewDetails] = useState<Detail>({
+  const [viewDetails, setViewDetails] = useState<CardDetails>({
     id: 0,
     isOpened: false,
   });
