@@ -67,7 +67,6 @@ export default function Header({ selectValue, activeCircleSwitch, setActiveCircl
           {featuredPokemonData &&
             <>
               <StyledFeaturedImageWrapper>
-                {/* @ts-ignore */}
                 <img src={featuredPokemonData.sprites.other.dream_world.front_default} 
                   alt="featured pokemon"
                 />
@@ -82,19 +81,16 @@ export default function Header({ selectValue, activeCircleSwitch, setActiveCircl
 
                 <StyledDetailWrapper>
                   <div>Types:</div>
-                  {/* @ts-ignore */}
                   {featuredPokemonData.types.map(p => <div key={uuidv4()}>{p.type.name}</div>)}
                 </StyledDetailWrapper>
 
                 <StyledDetailWrapper>
                   <div>Abilities:</div>
-                  {/* @ts-ignore */}
                   {featuredPokemonData.abilities.map(p => <div key={uuidv4()}>{p.ability.name}</div>)}
                 </StyledDetailWrapper>
 
                 <StyledDetailWrapper>
                   <div>Weight:</div>
-                  {/* @ts-ignore */}
                   <div>{featuredPokemonData.weight} kg</div>
                 </StyledDetailWrapper>
 
