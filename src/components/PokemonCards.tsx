@@ -74,8 +74,44 @@ const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
           <StyledCloseButton onClick={() => setViewDetails({id: 0, isOpened: false})}>
             X
           </StyledCloseButton>
+
+          <div>
+            <div>
+              {/* @ts-ignore */}
+              <img src={pokemonData[0].sprites.other.dream_world.front_default} 
+                alt="featured pokemon"
+              />
+            </div>
+
+            <div>
+              <div>
+                <div>Name:</div>
+                {/* @ts-ignore */}
+                <div>{pokemonData[0].name}</div>
+              </div>
+
+              <div>
+                <div>Types:</div>
+                {/* @ts-ignore */}
+                {pokemonData[0].types.map(p => <div key={uuidv4()}>{p.type.name}</div>)}
+              </div>
+
+              <div>
+                <div>Abilities:</div>
+                {/* @ts-ignore */}
+                {pokemonData[0].abilities.map(p => <div key={uuidv4()}>{p.ability.name}</div>)}
+              </div>
+
+              <div>
+                <div>Weight:</div>
+                {/* @ts-ignore */}
+                <div>{pokemonData[0].weight}</div>
+              </div>
+            </div>
+          </div>
         </StyledFeaturedCard>
       }
+      
       {pokemonData && pokemonData.map(pokemon => (
         <StyledPokemonCard key={uuidv4()} onClick={() => selectPokemon(pokemon.id)}>
           <img 
