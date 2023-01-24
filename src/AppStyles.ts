@@ -146,11 +146,11 @@ const StyledPokemonName = styled.div`
 
 const StyledFeaturedCard = styled(MainCard)`
   position: fixed;
-  top: 25%;
+  top: 40%;
   left: 50%;
   width: 30em;
-  height: 18em;
-  margin-top: -9em;
+  height: 36em;
+  margin-top: -18em;
   margin-left: -15em;
 `;
 
