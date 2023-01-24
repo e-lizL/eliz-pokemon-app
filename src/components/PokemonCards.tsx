@@ -25,7 +25,7 @@ interface Detail {
 
 const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
 
-  const [featuredPokemon, setFeaturedPokemon] = useState(pokemonData[3])
+  const [featuredPokemon, setFeaturedPokemon] = useState(pokemonData[5])
 
   const [viewDetails, setViewDetails] = useState<Detail>({
     id: 0,
@@ -39,6 +39,8 @@ const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
         isOpened: true,
       });
     }
+    let selection = pokemonData.find(item => item.id === id);
+    selection && setFeaturedPokemon(selection);
   };
 
 
