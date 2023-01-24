@@ -14,16 +14,18 @@ import {
   CircleContainer,
   StyledDetailWrapper,
   StyledFeaturedImageWrapper,
-  StyledDetails
+  StyledDetails,
+  StyledLoadingMessage
 } from ".././AppStyles";
 
 interface HeaderProps {
   activeCircleSwitch: boolean;
   setActiveCircleSwitch: (value: boolean) => void;
   pokemonData: PokemonStats[];
+  isLoading: boolean;
 }
 
-export default function Header({ activeCircleSwitch, setActiveCircleSwitch, pokemonData }: HeaderProps) {
+export default function Header({ isLoading, activeCircleSwitch, setActiveCircleSwitch, pokemonData }: HeaderProps) {
   const [featuredPokemonData, setFeaturedPokemonData] = useState<PokemonStats>();
   const [pokemonIndex, setPokemonIndex] = useState(25)
   const [featuredPokemonUrl, setFeaturedPokemonUrl] = useState("https://pokeapi.co/api/v2/pokemon/pikachu");
@@ -81,7 +83,9 @@ export default function Header({ activeCircleSwitch, setActiveCircleSwitch, poke
                   />
                 }
               </StyledFeaturedImageWrapper>
-
+              {isLoading? 
+                <StyledLoadingMessage>Loading... pika pika ..Pika</StyledLoadingMessage> 
+                :
               <StyledDetails>
 
                 <StyledDetailWrapper>
@@ -112,9 +116,11 @@ export default function Header({ activeCircleSwitch, setActiveCircleSwitch, poke
                 </StyledDetailWrapper>
 
               </StyledDetails>
+              }
 
             </>
           }
+
         </MainCard>
       </HeaderWrapper>
 

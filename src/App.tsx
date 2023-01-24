@@ -8,9 +8,11 @@ import { PokemonStats } from './interfaces';
 function App() {
   const [pokemonData, setPokemonData] = useState<PokemonStats[]>([]);
   const [activeCircleSwitch, setActiveCircleSwitch] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const getPokemonData = async () => {
+      setIsLoading(true);
       const pokemonUrl = "https://pokeapi.co/api/v2/pokemon?limit=151";
       try {
         const res = await axios.get(pokemonUrl)
@@ -25,6 +27,7 @@ function App() {
       } catch (error) {
         console.log(error)
       }
+      setIsLoading(false)
     };
     getPokemonData();
   }, []);
@@ -36,6 +39,7 @@ function App() {
         activeCircleSwitch={activeCircleSwitch}
         setActiveCircleSwitch={setActiveCircleSwitch}
         pokemonData={pokemonData}
+        isLoading={isLoading}
       />
 
       <PokemonCards 

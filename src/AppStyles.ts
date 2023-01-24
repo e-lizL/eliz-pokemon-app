@@ -172,6 +172,12 @@ const StyledCloseButton = styled.button`
   width: 40px;
 `;
 
+const StyledLoadingMessage = styled.div`
+  font-size: 1.1rem;
+  padding: 40px 0;
+  font-family: 'Black Han Sans', sans-serif;
+`;
+
 export {
   HeaderWrapper,
   MainCard,
@@ -193,5 +199,6 @@ export {
   StyledPokemonName,
   StyledFeaturedCard,
   StyledCloseButton,
-  StyledOverlay
+  StyledOverlay,
+  StyledLoadingMessage
 };
