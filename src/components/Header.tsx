@@ -95,7 +95,7 @@ export default function Header({ selectValue, activeCircleSwitch, setActiveCircl
                 <StyledDetailWrapper>
                   <div>Weight:</div>
                   {/* @ts-ignore */}
-                  <div>{featuredPokemonData.weight}</div>
+                  <div>{featuredPokemonData.weight} kg</div>
                 </StyledDetailWrapper>
 
               </StyledDetails>

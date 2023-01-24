@@ -83,7 +83,7 @@ const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
                 <StyledDetailWrapper>
                   <div>Weight:</div>
                   {/* @ts-ignore */}
-                  <div>{featuredPokemon.weight}</div>
+                  <div>{featuredPokemon.weight} kg</div>
                 </StyledDetailWrapper>
               </StyledDetails>
               </div>
