@@ -67,31 +67,40 @@ export default function Header({ selectValue, activeCircleSwitch, setActiveCircl
           {featuredPokemonData &&
             <>
               <StyledFeaturedImageWrapper>
-                <img src={featuredPokemonData.sprites.other.dream_world.front_default} 
-                  alt="featured pokemon"
-                />
+                {featuredPokemonData.sprites.other.dream_world.front_default &&
+                  <img src={featuredPokemonData.sprites.other.dream_world.front_default} 
+                      alt="featured pokemon"
+                  />
+                }
               </StyledFeaturedImageWrapper>
 
               <StyledDetails>
 
                 <StyledDetailWrapper>
                   <div>Name:</div>
-                  <div>{featuredPokemonData.name}</div>
+                  {featuredPokemonData.name &&
+                    <div>{featuredPokemonData.name}</div>
+                  }
                 </StyledDetailWrapper>
 
                 <StyledDetailWrapper>
                   <div>Types:</div>
-                  {featuredPokemonData.types.map(p => <div key={uuidv4()}>{p.type.name}</div>)}
+                  {featuredPokemonData.types 
+                    && featuredPokemonData.types.map(p => <div key={uuidv4()}>{p.type.name}</div>)
+                  }
                 </StyledDetailWrapper>
 
                 <StyledDetailWrapper>
                   <div>Abilities:</div>
-                  {featuredPokemonData.abilities.map(p => <div key={uuidv4()}>{p.ability.name}</div>)}
+                  {featuredPokemonData.abilities
+                    && featuredPokemonData.abilities.map(p => <div key={uuidv4()}>{p.ability.name}</div>)}
                 </StyledDetailWrapper>
 
                 <StyledDetailWrapper>
                   <div>Weight:</div>
-                  <div>{featuredPokemonData.weight} kg</div>
+                  {featuredPokemonData.weight
+                    && <div>{featuredPokemonData.weight} kg</div>
+                  }
                 </StyledDetailWrapper>
 
               </StyledDetails>

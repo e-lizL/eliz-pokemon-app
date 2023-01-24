@@ -22,11 +22,8 @@ export default function SelectPokemon({ pokemonData, selectValue, setSelectValue
 
   return (
     <StyledSelectWrapper>
-      <StyledSelectLabel>
-        Choose your Pokemon:
-      </StyledSelectLabel>
+      <StyledSelectLabel>Choose your Pokemon: </StyledSelectLabel>
       <StyledSelect value={selectValue} onChange={handleChange}>
-      { /* @ts-ignore */ }
       {pokemonData && pokemonData.map(pokemon => <option key={uuidv4()} value={pokemon.name}>{pokemon.name}</option>)} 
       </StyledSelect>
     </StyledSelectWrapper> 
