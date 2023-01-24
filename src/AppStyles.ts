@@ -138,6 +138,9 @@ const StyledPokemonCard = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   background:  #e6e2e2;
   padding: 12px;
+  &:hover, &:active, &:focus {
+    background: var(--pokemon-red);
+  }
 `;
 
 const StyledPokemonName = styled.div`
