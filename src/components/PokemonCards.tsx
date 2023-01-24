@@ -2,6 +2,12 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import { PokemonStats } from '../interfaces';
+import {
+  MainCard,
+  StyledDetailWrapper,
+  StyledFeaturedImageWrapper,
+  StyledDetails,
+} from ".././AppStyles";
 
 const StyledPokemonCards = styled.div`
   width: 98%;
@@ -26,20 +32,19 @@ const StyledPokemonName = styled.div`
   margin-top: 8px;
 `;
 
-const StyledFeaturedCard = styled(StyledPokemonCard)`
+const StyledFeaturedCard = styled(MainCard)`
   position: absolute;
   left: 0; 
   right: 0; 
   margin: 30px auto 0; 
   width: 80%;
   max-width: 400px;
-  height: 50vw;
-  max-height: 500px;
 `;
 
 const StyledCloseButton = styled.button`
   padding: 8px;
   font-size: 1.1rem;
+  width: 40px;
 `;
 
 interface PokemonCardsProps {
@@ -76,42 +81,43 @@ const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
           </StyledCloseButton>
 
           <div>
-            <div>
+            <StyledFeaturedImageWrapper>
               {/* @ts-ignore */}
               <img src={pokemonData[0].sprites.other.dream_world.front_default} 
                 alt="featured pokemon"
               />
-            </div>
+            </StyledFeaturedImageWrapper>
 
-            <div>
-              <div>
+            <StyledDetails>
+              <StyledDetailWrapper>
                 <div>Name:</div>
                 {/* @ts-ignore */}
                 <div>{pokemonData[0].name}</div>
-              </div>
+              </StyledDetailWrapper>
 
-              <div>
+              <StyledDetailWrapper>
                 <div>Types:</div>
                 {/* @ts-ignore */}
                 {pokemonData[0].types.map(p => <div key={uuidv4()}>{p.type.name}</div>)}
-              </div>
+              </StyledDetailWrapper>
 
-              <div>
+              <StyledDetailWrapper>
                 <div>Abilities:</div>
                 {/* @ts-ignore */}
                 {pokemonData[0].abilities.map(p => <div key={uuidv4()}>{p.ability.name}</div>)}
-              </div>
+              </StyledDetailWrapper>
 
-              <div>
+              <StyledDetailWrapper>
                 <div>Weight:</div>
                 {/* @ts-ignore */}
                 <div>{pokemonData[0].weight}</div>
-              </div>
-            </div>
+              </StyledDetailWrapper>
+            </StyledDetails>
+            
           </div>
         </StyledFeaturedCard>
       }
-      
+
       {pokemonData && pokemonData.map(pokemon => (
         <StyledPokemonCard key={uuidv4()} onClick={() => selectPokemon(pokemon.id)}>
           <img 
