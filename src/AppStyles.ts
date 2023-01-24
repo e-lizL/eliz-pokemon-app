@@ -145,12 +145,13 @@ const StyledPokemonName = styled.div`
 `;
 
 const StyledFeaturedCard = styled(MainCard)`
-  position: absolute;
-  left: 0; 
-  right: 0; 
-  margin: 30px auto 0; 
-  width: 80%;
-  max-width: 400px;
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  width: 30em;
+  height: 18em;
+  margin-top: -9em;
+  margin-left: -15em;
 `;
 
 const StyledCloseButton = styled.button`
