@@ -92,10 +92,10 @@ const PokemonCards = ({ pokemonData }: PokemonCardsProps) => {
       {pokemonData && pokemonData.map(pokemon => (
         <StyledPokemonCard key={uuidv4()} onClick={() => selectPokemon(pokemon.id)}>
           <img 
-            src={pokemon.sprites.other.dream_world.front_default}
+            src={pokemon.sprites.front_default}
             alt="pokemon"
-            width="100"
-            height="100" 
+            width="150"
+            height="150" 
           />
           <StyledPokemonName>{pokemon.name}</StyledPokemonName> 
         </StyledPokemonCard>

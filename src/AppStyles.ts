@@ -101,8 +101,10 @@ const RightTriangle = styled(RightArrow)`
 `;
 
 const StyledSelectLabel = styled.label`
-  font-size: 1.2rem;
+  font-size: 2.2rem;
+  color: white;
   padding-left: 10px;
+  font-family: 'Black Han Sans', sans-serif;
 `;
 
 const StyledSelect = styled.select`
@@ -112,13 +114,14 @@ const StyledSelect = styled.select`
   display: flex;
   font-size: 1.2rem;
   border-radius: 20px;
-  background: var(--off-white);
+  background: var(--light-gray);
 `;
 
 const StyledSelectWrapper = styled.div`
   display: flex;
   gap: 20px;
   align-items: center;
+  padding-top: 20px; 
 `;
 
 const StyledPokemonCards = styled.div`

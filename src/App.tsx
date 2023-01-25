@@ -16,8 +16,7 @@ function App() {
       const pokemonUrl = "https://pokeapi.co/api/v2/pokemon?limit=151";
       try {
         const res = await axios.get(pokemonUrl)
-        /* @ts-ignore */
-        const alphabetData = res.data.results.sort((a, b) => a.name.localeCompare(b.name));
+        const alphabetData = res.data.results.sort((a: PokemonStats, b: PokemonStats) => a.name.localeCompare(b.name));
         alphabetData.forEach(async (pokemon: PokemonStats) => {
           const poke = await axios.get(
             `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
