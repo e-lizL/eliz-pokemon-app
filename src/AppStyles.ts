@@ -128,9 +128,14 @@ const StyledSelect = styled.select`
 
 const StyledSelectWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 20px;
+  text-align: center; 
   align-items: center;
   padding-top: 20px; 
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
 
 `;
 
