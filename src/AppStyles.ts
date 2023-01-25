@@ -48,7 +48,10 @@ const StyledDetailWrapper = styled.div`
   margin-top: 20px;
   display: flex;
   gap: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  @media (min-width: 800px) {
+    font-size: 1.2rem;
+  }
   div:first-child {
     font-family: 'Black Han Sans', sans-serif;
   }
