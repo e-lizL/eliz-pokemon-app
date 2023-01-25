@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import axios, { AxiosResponse } from "axios";
-// AxiosResponse is typing tool, for when you are testing data fetching and don't want Typescript on your back
+import axios from "axios";
 import PokemonCards from './components/PokemonCards';
 import Header from './components/Header';
 import { PokemonStats } from './interfaces';

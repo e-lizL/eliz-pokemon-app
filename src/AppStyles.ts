@@ -19,15 +19,24 @@ const MainCard = styled.div`
   border: 2px solid black;
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 25px 15px;
+  @media (min-width: 600px) {
+    padding: 40px;
+  }
 `;
 
 const StyledFeaturedImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   img {
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
+  }
+  @media (min-width: 600px) {
+    img {
+      height: 300px;
+      width: 300px;
+    }
   }
 `;
 
@@ -122,6 +131,7 @@ const StyledSelectWrapper = styled.div`
   gap: 20px;
   align-items: center;
   padding-top: 20px; 
+
 `;
 
 const StyledPokemonCards = styled.div`
