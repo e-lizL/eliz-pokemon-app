@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { LeftArrow } from "@styled-icons/boxicons-solid/LeftArrow";
 import { RightArrow } from "@styled-icons/boxicons-solid/RightArrow";
 
+const breakpoint = '600px';
+
 const HeaderWrapper = styled.div`
   background: var(--pokemon-red);
   display: flex;
@@ -20,7 +22,7 @@ const MainCard = styled.div`
   display: flex;
   flex-direction: column;
   padding: 25px 15px;
-  @media (min-width: 600px) {
+  @media (min-width:${breakpoint}) {
     padding: 40px;
   }
 `;
@@ -32,7 +34,7 @@ const StyledFeaturedImageWrapper = styled.div`
     height: 200px;
     width: 200px;
   }
-  @media (min-width: 600px) {
+  @media (min-width:${breakpoint}) {
     img {
       height: 300px;
       width: 300px;
@@ -49,7 +51,7 @@ const StyledDetailWrapper = styled.div`
   display: flex;
   gap: 1rem;
   font-size: 1rem;
-  @media (min-width: 800px) {
+  @media (min-width:${breakpoint}) {
     font-size: 1.2rem;
   }
   div:first-child {
@@ -86,7 +88,6 @@ const OuterCircle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid red; */
 `;
 
 const InnerCircle = styled(OuterCircle)`
@@ -136,8 +137,9 @@ const StyledSelectWrapper = styled.div`
   text-align: center; 
   align-items: center;
   padding-top: 20px; 
-  @media (min-width: 800px) {
+  @media (min-width:${breakpoint}) {
     flex-direction: row;
+    padding: 20px;
   }
 
 `;
