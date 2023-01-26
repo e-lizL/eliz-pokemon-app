@@ -72,8 +72,9 @@ export default function Header({ isLoading, activeCircleSwitch, setActiveCircleS
             <>
               <StyledFeaturedImageWrapper>
                 {featuredPokemonData.sprites.other.dream_world.front_default &&
-                  <img src={featuredPokemonData.sprites.other.dream_world.front_default} 
-                      alt="featured pokemon"
+                  <img 
+                    src={featuredPokemonData.sprites.other.dream_world.front_default} 
+                    alt="featured pokemon"
                   />
                 }
               </StyledFeaturedImageWrapper>
